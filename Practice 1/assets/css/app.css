@@ -1,0 +1,405 @@
+/* Шрифты */
+
+@font-face { font-family: "Fira Sans"; font-weight: 400; src: url("../fonts/fira-sans-400.woff2"); }
+@font-face { font-family: "Fira Sans"; font-weight: 500; src: url("../fonts/fira-sans-500.woff2"); }
+@font-face { font-family: "Playfair Display"; font-weight: 400; src: url("../fonts/playfair-display-400.woff2"); }
+@font-face { font-family: "Playfair Display"; font-weight: 700; src: url("../fonts/playfair-display-700.woff2"); }
+
+/* Цвета и гарнитуры */
+
+:root {
+  --c-dark: #1b1b1b;
+  --c-accent: #4fae8e;
+  --c-card: #f2f2f2;
+  --c-muted: #bbb;
+  --ff-serif: "Playfair Display", serif;
+}
+
+/* Сброс и общее */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 14px;
+  color: var(--c-dark);
+  background: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, .brand, .page-head__all, .card__date, .tours__month, .soon__date {
+  font-family: var(--ff-serif);
+}
+
+.wrap {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 20px;
+  background: var(--c-accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Шапка */
+
+.top-bar {
+  background: var(--c-dark);
+  color: #fff;
+}
+
+.top-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.brand {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.menu {
+  display: flex;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.menu a:not(:first-child)::before {
+  content: "•";
+  margin: 0 12px;
+}
+
+/* Заголовок */
+
+.page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0 30px;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.page-head__all {
+  font-size: 15px;
+}
+
+.page-head__all i {
+  margin-right: 14px;
+  color: var(--c-accent);
+  font-size: 22px;
+  vertical-align: middle;
+}
+
+/* События и боковая панель */
+
+.content {
+  display: flex;
+  gap: 30px;
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+}
+
+.aside {
+  flex-shrink: 0;
+  width: 324px;
+}
+
+/* Карточка событий */
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding: 20px 36px 20px 20px;
+  border-radius: 8px;
+  background: var(--c-card);
+}
+
+.card__date {
+  width: 84px;
+  text-align: center;
+}
+
+.card__num {
+  display: block;
+  font-size: 32px;
+}
+
+.card__month {
+  font-weight: 700;
+}
+
+.card__pic {
+  flex-shrink: 0;
+  width: 196px;
+  height: 148px;
+  border-radius: 4px;
+  background: var(--c-muted);
+  object-fit: cover;
+}
+
+.card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.card__name {
+  margin-bottom: 18px;
+  font-size: 18px;
+}
+
+.card__desc {
+  margin-bottom: 26px;
+  font-size: 10px;
+}
+
+.card__tags {
+  display: flex;
+  gap: 22px;
+  font-size: 10px;
+}
+
+.card__tags i {
+  margin-right: 10px;
+  color: var(--c-muted);
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+/* Календарик */
+
+.tours {
+  margin-bottom: 30px;
+  border-radius: 8px;
+  background: var(--c-card);
+  overflow: hidden;
+}
+
+.tours__head {
+  display: flex;
+  align-items: flex-end;
+  height: 184px;
+  padding: 18px 16px;
+  background: var(--c-muted);
+}
+
+.tours__title {
+  font-size: 18px;
+}
+
+.tours__main {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.tours__side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tours__month {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.tours__nav {
+  display: flex;
+  gap: 6px;
+}
+
+.tours__btn {
+  width: 28px;
+  height: 28px;
+  background: var(--c-accent);
+  box-shadow: inset 0 0 0 7px var(--c-dark);
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 24px);
+  gap: 3px;
+  color: #fff;
+  font-size: 8px;
+  text-align: center;
+}
+
+.days span {
+  line-height: 24px;
+  background: var(--c-muted);
+}
+
+.days .is-on {
+  background: var(--c-accent);
+}
+
+/* Новости */
+
+.notice {
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.notice__title {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.notice__text {
+  font-size: 9px;
+}
+
+/* Анонсы */
+
+.soon {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.soon__date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 4px;
+  background: var(--c-accent);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.soon__date small {
+  font-size: 9px;
+}
+
+/* Превьюшка */
+
+.previews {
+  display: flex;
+  gap: 20px;
+  margin: 40px 0 60px;
+}
+
+.preview {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 256px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: var(--c-card);
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.preview__pic {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  background: #555;
+}
+
+/* Футер */
+
+.site-footer {
+  padding: 40px 0 20px;
+  background: var(--c-dark);
+  color: #fff;
+  font-size: 10px;
+}
+
+.site-footer__cols {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 36px;
+  border-bottom: 1px solid #555;
+}
+
+.site-footer__col {
+  width: 260px;
+}
+
+.site-footer__heading {
+  margin-bottom: 26px;
+  font-size: 14px;
+}
+
+.site-footer__col p,
+.site-footer__col a {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.site-footer__row {
+  display: flex;
+  gap: 16px;
+}
+
+.site-footer__mail {
+  text-decoration: underline;
+}
+
+.site-footer__copy {
+  margin-top: 20px;
+  color: #999;
+  text-align: center;
+}
+
+/* Страница с событиями */
+
+.events-page {
+  padding: 50px 0 140px;
+  background: #ececec;
+}
+
+.events-page .page-title {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.events-page .events {
+  gap: 40px;
+}
+
+.events-page .card {
+  background: #e2e2e2;
+}
